@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+if [[ -f run.R ]]; then
+  echo "R (shiny)"
+elif [[ -f app.R ]]; then
+  echo "R (plumber)"
+elif [[ -f packrat/init.R ]]; then
+  echo "R (packrat)"
+elif [[ -f renv/activate.R ]]; then
+  echo "R (renv)"
+elif [[ -f install.R ]]; then
+  echo "R (renku)"
+elif [[ -f init.r ]]; then
+  echo "R"
+else
+  echo "No R env found";
+  exit 1
+fi
+exit 0
